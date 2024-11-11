@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,5 +47,17 @@ public class TaskController {
         List<Task> tasks = taskService.getAllTasks();
         return ResponseEntity.status(200).body(tasks);
     }
+
+    @PutMapping("/tasks/{id}")
+    public ResponseEntity<Task> updateTask(@PathVariable Long id,@RequestBody TaskDto taskDto) {
+        Task task = taskService.updateTask(id, taskDto);
+        
+        if(task==null) {
+            return ResponseEntity.status(404).body(null);
+        }else {
+            return ResponseEntity.status(200).body(task);
+        }
+    }
+    
 
 }
