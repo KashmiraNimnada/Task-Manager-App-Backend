@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import com.asign.taskm.service.TaskService;
 import com.asign.taskm.service.UserService;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class TaskController {
 
     @Autowired
@@ -29,7 +31,6 @@ public class TaskController {
 
     @PostMapping("/tasks")
     public ResponseEntity<Task> createTask(@RequestBody TaskDto taskDto){
-
         Task task = new Task();
         task.setName(taskDto.getName());
         task.setDescription(taskDto.getDescription());
