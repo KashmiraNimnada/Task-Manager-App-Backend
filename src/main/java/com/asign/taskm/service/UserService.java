@@ -7,4 +7,5 @@ import com.asign.taskm.entity.User;
 @Service
 public interface UserService {
     User createUser(User user);
+    User getUserByUsername(String username);
 }

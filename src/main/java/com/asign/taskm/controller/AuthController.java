@@ -5,13 +5,11 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.asign.taskm.dto.UserLoginDto;
 import com.asign.taskm.entity.User;
 import com.asign.taskm.repository.UserRepository;
 import com.asign.taskm.security.JwtUtils;
@@ -21,8 +19,8 @@ import com.asign.taskm.security.JwtUtils;
 @CrossOrigin(origins = "*")
 public class AuthController {
     
-    @Autowired
-    private UserRepository userRepository;
+    // @Autowired
+    // private UserRepository userRepository;
 
     @Autowired
     private AuthenticationManager authenticationManager;
