@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.asign.taskm.dto.TaskDto;
 import com.asign.taskm.entity.Task;
 import com.asign.taskm.entity.User;
+import com.asign.taskm.repository.UserRepository;
 import com.asign.taskm.service.TaskService;
-import com.asign.taskm.service.UserService;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -27,7 +27,7 @@ public class TaskController {
     private TaskService taskService;
 
     @Autowired
-    private UserService userService;
+    private UserRepository userRepository;
 
     @PostMapping("/tasks")
     public ResponseEntity<Task> createTask(@RequestBody TaskDto taskDto){
@@ -36,8 +36,7 @@ public class TaskController {
         task.setDescription(taskDto.getDescription());
         task.setDuedate(taskDto.getDuedate());
         task.setStatus(taskDto.getStatus());
-        System.out.println(taskDto.getUser_id());
-        User user = userService.getUserById(taskDto.getUser_id());
+        User user = userRepository.findByUsername(taskDto.getUser_name()).orElse(null);
         System.out.println(user);
         task.setUser(user);
 

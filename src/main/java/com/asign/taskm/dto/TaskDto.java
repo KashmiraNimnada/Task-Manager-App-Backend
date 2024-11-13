@@ -11,6 +11,6 @@ public class TaskDto {
     private String description;
     private String duedate;
     private String status;
-    private Long user_id;
+    private String user_name;
 
 }

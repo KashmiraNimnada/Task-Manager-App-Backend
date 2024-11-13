@@ -42,7 +42,7 @@ public class TaskServiceImpl implements TaskService{
             task.setDescription(taskDto.getDescription());
             task.setDuedate(taskDto.getDuedate());
             task.setStatus(taskDto.getStatus());
-            User user = userRepository.findById(taskDto.getUser_id()).orElse(null);
+            User user = userRepository.findByUsername(taskDto.getUser_name()).orElse(null);
             task.setUser(user);
             return taskRepository.save(task);
         }
