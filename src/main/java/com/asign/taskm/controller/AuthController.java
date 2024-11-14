@@ -11,16 +11,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.asign.taskm.entity.User;
-import com.asign.taskm.repository.UserRepository;
 import com.asign.taskm.security.JwtUtils;
 
 
 @RestController
 @CrossOrigin(origins = "*")
 public class AuthController {
-    
-    // @Autowired
-    // private UserRepository userRepository;
 
     @Autowired
     private AuthenticationManager authenticationManager;
