@@ -29,5 +29,5 @@ This is a full-stack **Task Management Application** that allows users to sign u
 ### 1. Backend Setup (Spring Boot)
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
-   cd task-management-backend
+   git clone <https://github.com/KashmiraNimnada/Task-Manager-App-Backend.git>
+   cd Task-Manager-App-Backend
