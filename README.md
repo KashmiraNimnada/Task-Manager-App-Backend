@@ -1,7 +1,7 @@
 # Task Management Application
 
 ## Overview
-This is a full-stack **Task Management Application** that allows users to sign up, log in, and manage their tasks efficiently. The application supports features like adding tasks, getting existing tasks,marking exsisting tasks as completed, deleting tasks. It is built using **React** for the frontend using typescript, **Spring Boot** for the backend, and **MySQL** for data storage.
+This is a back-end of a full-stack **Task Management Application** that allows users to sign up, log in, and manage their tasks efficiently. The application supports features like adding tasks, getting existing tasks,marking exsisting tasks as completed, deleting tasks. It is built using **React** for the frontend using typescript, **Spring Boot** for the backend, and **MySQL** for data storage.
 
 ## Tech Stack
 - **Frontend**: React-ts, Tailwind CSS
